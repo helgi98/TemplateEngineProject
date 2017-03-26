@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{10E805D8-9277-4F0E-9653-00EEE0DEE50D}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>TemplateEngineProject</RootNamespace>
+    <AssemblyName>TemplateEngineProject</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.ValueTuple, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.3.0\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="src\model\Item.cs" />
+    <Compile Include="src\model\Order.cs" />
+    <Compile Include="src\utilities\ContextReader.cs" />
+    <Compile Include="src\exceptions\MacroExecutionException.cs" />
+    <Compile Include="src\exceptions\ParserException.cs" />
+    <Compile Include="src\macros\ConditionContainerMacro.cs" />
+    <Compile Include="src\macros\ConditionMacro.cs" />
+    <Compile Include="src\macros\ContainerMacro.cs" />
+    <Compile Include="src\macros\ForeachMacro.cs" />
+    <Compile Include="src\macros\IfMacro.cs" />
+    <Compile Include="src\macros\UserMacroInfo.cs" />
+    <Compile Include="src\macros\PlainTextMacro.cs" />
+    <Compile Include="src\macros\ReferenceMacro.cs" />
+    <Compile Include="src\macros\UserMacroCall.cs" />
+    <Compile Include="src\parsers\ConditionContainerParser.cs" />
+    <Compile Include="src\parsers\ElseElementParser.cs" />
+    <Compile Include="src\parsers\ForeachParser.cs" />
+    <Compile Include="src\parsers\IfElementParser.cs" />
+    <Compile Include="src\parsers\IParser.cs" />
+    <Compile Include="src\parsers\CreateMacroParser.cs" />
+    <Compile Include="src\parsers\MacroCallParser.cs" />
+    <Compile Include="src\parsers\PlainTextParser.cs" />
+    <Compile Include="src\parsers\ReferenceMacroParser.cs" />
+    <Compile Include="src\parsers\TemplateParser.cs" />
+    <Compile Include="src\Template.cs" />
+    <Compile Include="src\tables\ContextTable.cs" />
+    <Compile Include="src\macros\ElseMacro.cs" />
+    <Compile Include="src\macros\IMacro.cs" />
+    <Compile Include="src\tables\MacrosTable.cs" />
+    <Compile Include="src\Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="src\utilities\PostfixSystem.cs" />
+    <Compile Include="src\utilities\ReflectionUtils.cs" />
+    <Compile Include="src\model\User.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="MacrosDiagram.cd" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
